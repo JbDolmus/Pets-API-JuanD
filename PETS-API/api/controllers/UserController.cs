@@ -105,11 +105,6 @@ namespace api.controllers
         public async Task<IActionResult> CreateUserWithPets([FromBody] CreateUserWithPetsRequestDto userWithPetsDto)
         {
             var userModel = userWithPetsDto.ToUserWithPetsFromCreateDto();
-            userModel.Pets = userWithPetsDto.Pets.Select(petDto => new Pet
-            {
-                Name = petDto.Name,
-                Animal = petDto.Animal
-            }).ToList();
 
             await _context.Users.AddAsync(userModel);
             await _context.SaveChangesAsync();

@@ -39,7 +39,11 @@ namespace api.Mappers
                 FirstName = createUserWithPetsRequest.FirstName,
                 LastName = createUserWithPetsRequest.LastName,
                 Age = createUserWithPetsRequest.Age,
-                Pets = new List<Pet>()
+                Pets = createUserWithPetsRequest.Pets.Select(petDto => new Pet
+                {
+                    Name = petDto.Name,
+                    Animal = petDto.Animal
+                }).ToList()
             };
         }
     }
