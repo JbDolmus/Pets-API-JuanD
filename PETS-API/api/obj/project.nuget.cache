@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LBAh82OgTns=",
+  "dgSpecHash": "uCaDF6Cc2LU=",
   "success": true,
-  "projectFilePath": "D:\\JB\\Documents\\PETS-API\\api\\api.csproj",
+  "projectFilePath": "D:\\JB\\Documents\\Pets-API-JuanD\\PETS-API\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bauti\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\bauti\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
