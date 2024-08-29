@@ -9,10 +9,21 @@ namespace api.Mappers
 {
     public static class PetMapper
     {
-        public static PetDto ToDto(this Pet pet){
-            return new PetDto{
+        public static PetDto ToDto(this Pet pet)
+        {
+            return new PetDto
+            {
                 Name = pet.Name,
                 Animal = pet.Animal
+            };
+        }
+
+        public static Pet ToPetFromCreateDto(this CreatePetRequestDto createPetRequest)
+        {
+            return new Pet
+            {
+                Name = createPetRequest.Name,
+                Animal = createPetRequest.Animal
             };
         }
     }

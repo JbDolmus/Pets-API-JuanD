@@ -1,6 +1,7 @@
 using api.Data;
 using api.Dtos.User;
 using api.Mappers;
+using api.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -77,5 +78,44 @@ namespace api.controllers
 
             return NoContent();
         }
+
+        [HttpPost]
+        [Route("{userId}/assign-pet/{petId}")]
+        public async Task<IActionResult> AssignPetToUser([FromRoute] int userId, [FromRoute] int petId)
+        {
+            var userModel = await _context.Users.FirstOrDefaultAsync(user => user.Id == userId);
+            if (userModel == null)
+            {
+                return NotFound();
+            }
+
+            var petModel = await _context.Pets.FirstOrDefaultAsync(pet => pet.Id == petId);
+            if (petModel == null)
+            {
+                return NotFound();
+            }
+
+            userModel.Pets.Add(petModel);
+            await _context.SaveChangesAsync();
+
+            return Ok(userModel.ToDto());
+        }
+
+        [HttpPost("create-user-with-pets")]
+        public async Task<IActionResult> CreateUserWithPets([FromBody] CreateUserWithPetsRequestDto userWithPetsDto)
+        {
+            var userModel = userWithPetsDto.ToUserWithPetsFromCreateDto();
+            userModel.Pets = userWithPetsDto.Pets.Select(petDto => new Pet
+            {
+                Name = petDto.Name,
+                Animal = petDto.Animal
+            }).ToList();
+
+            await _context.Users.AddAsync(userModel);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetById), new { id = userModel.Id }, userModel.ToDto());
+        }
+
     }
 }
