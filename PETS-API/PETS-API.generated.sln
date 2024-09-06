@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api", "api\api.csproj", "{EF2CB372-1CA8-4D83-8E9A-7412EB5EB4D4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PETS-API", "PETS-API", "{2E777F80-2E1E-49B7-85D9-5914E745A25F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api", "PETS-API\api\api.csproj", "{1758685C-8528-4B45-9CAF-C9A11909CCA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EF2CB372-1CA8-4D83-8E9A-7412EB5EB4D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF2CB372-1CA8-4D83-8E9A-7412EB5EB4D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF2CB372-1CA8-4D83-8E9A-7412EB5EB4D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF2CB372-1CA8-4D83-8E9A-7412EB5EB4D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1758685C-8528-4B45-9CAF-C9A11909CCA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1758685C-8528-4B45-9CAF-C9A11909CCA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1758685C-8528-4B45-9CAF-C9A11909CCA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1758685C-8528-4B45-9CAF-C9A11909CCA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1758685C-8528-4B45-9CAF-C9A11909CCA1} = {2E777F80-2E1E-49B7-85D9-5914E745A25F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41CB7AE7-F40C-487F-ADE6-DFD069905D5E}
