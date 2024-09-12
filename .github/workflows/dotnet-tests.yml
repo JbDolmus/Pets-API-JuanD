@@ -23,10 +23,10 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Restore dependencies
-        run: dotnet restore ./Api.Tests/Api.Tests.csproj
+        run: dotnet restore ./PETS-API/Api.Tests/Api.Tests.csproj
 
       - name: Build project
-        run: dotnet build ./Api.Tests/Api.Tests.csproj --no-restore
+        run: dotnet build ./PETS-API/Api.Tests/Api.Tests.csproj --no-restore
 
       - name: Run tests
-        run: dotnet test ./Api.Tests/Api.Tests.csproj --no-build --verbosity normal
+        run: dotnet test ./PETS-API/Api.Tests/Api.Tests.csproj --no-build --verbosity normal
